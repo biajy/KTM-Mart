@@ -23,18 +23,23 @@ builder.Services.AddScoped<IAprioriService>(provider =>
 {
     TrainingSet set = new TrainingSet("Customer", "Product");
     //var set = provider.GetService<TrainingSet>();
-    set.AddSample(new TrainingSample(1, new List<string>() { "bread", "milk", "juice", "cereal" }));
-    set.AddSample(new TrainingSample(2, new List<string>() { "milk", "juice", "chocolate" } ));
-    set.AddSample(new TrainingSample(3, new List<string>() { "bread", "milk", "chocolate", "cereal" }));
-    set.AddSample(new TrainingSample(4, new List<string>() { "bread", "milk", "juice", "chocolate" }));
-    set.AddSample(new TrainingSample(5, new List<string>() { "bread", "juice", "chocolate", "cereal" }));
-    set.AddSample(new TrainingSample(6, new List<string>() { "bread", "milk", "juice", "chocolate", "cereal" }));
-    set.AddSample(new TrainingSample(7, new List<string>() { "bread", "milk", "juice", "chocolate", "cereal", "yogurt" }));
-    set.AddSample(new TrainingSample(8, new List<string>() { "bread", "milk", "juice", "chocolate", "yogurt" }));
-    set.AddSample(new TrainingSample(9, new List<string>() { "bread", "milk", "juice", "cereal", "yogurt" }));
-    set.AddSample(new TrainingSample(10, new List<string>() { "milk", "juice", "chocolate", "cereal", "yogurt" }));
+    set.AddSample(new TrainingSample(1, new List<string>() { "Current Noodle", "Amul kool", "Coca-Cola", "Salt", "Mozzarella Cheese", "Egg", "Dishwasher" }));
+    set.AddSample(new TrainingSample(2, new List<string>() { "Beer", "Beef", "Coca-cola", "BBQ Sauce", "Garlic", "Ginger", "Wine", "Chicken", "Salt", "Oil", "Tomato", "Garbage Bag", "Dishwasher" }));
+    set.AddSample(new TrainingSample(3, new List<string>() { "Egg", "Milk", "Brown Bread", "Butter", "Avacado", "Khujurico Puff", "Jam" }));
+    set.AddSample(new TrainingSample(4, new List<string>() { "Cheese Cracker", "Milk", "Oreo", "Apple", "Banana", "Khajurico Puff" }));
+   
+    set.AddSample(new TrainingSample(5, new List<string>() { "WaiWai", "Tomato", "Ginger", "Garlic", "Icecream", "Oil", "Oreo", "Lemon","Egg", "Salt" }));
+   
+    set.AddSample(new TrainingSample(6, new List<string>() { "WaterMelon", "Icecream", "Milk", "Brown Bread", "Frooti", "Chocolate", "Oreo", "Bread", "jam" }));
+    set.AddSample(new TrainingSample(7, new List<string>() { " Brown bread", "Yogurt", "Egg", "Butter", "Apple", "Banana", "Orange" }));
+    set.AddSample(new TrainingSample(8, new List<string>() { "Amul Kool", "Cookies", "Current Noodle", "Coca-Cola", "Egg", "Dishwasher" }));
+    set.AddSample(new TrainingSample(9, new List<string>() { "Mushroom", "Salt", "Oil", "Chicken", "BBQ Sauce", "Potato", "Tomato", "Wine", "Garbage bag" }));
+    set.AddSample(new TrainingSample(10, new List<string>() { "Brown bread", "Milk", "Egg", "Butter", "Avocado", "Apple", "Banana", "Jam" }));
+    
+   
+   
     set.Lock();
-    return new ApriroiService(set, 60, 20);
+    return new ApriroiService(set, 60, 100);
 });
 //builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
 //    .AddEntityFrameworkStores<ApplicationDbContext>()
